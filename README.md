@@ -21,6 +21,7 @@ Clone using HTTPS:
 > https://github.com/olayinkaokewale/FileHandler.git
 
 
+
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
 require_once '<_your_path>/FileHandler/FileHandler.class.php';
@@ -72,8 +73,8 @@ You want users to be able to upload multiple files to your server. Below are the
 > files_upload.html
 ```html
 <form method="POST" action="upload.php" enctype="multipart/form-data">
-<input type="file" name="files[]" multiple />
-<button type="submit">Upload Files</button>
+	<input type="file" name="files[]" multiple />
+	<button type="submit">Upload Files</button>
 </form>
 ```
 
