@@ -1,0 +1,14 @@
+{
+    "name": "joshmvc/filehandler",
+    "autoload": {
+        "psr-0" : {
+            "JoshMVC\\Libs\\FileHandler" : "src"
+        }
+    },
+    "repositories": [
+	    {
+	        "type": "vcs",
+	        "url": "https://github.com/olayinkaokewale/FileHandler.git"
+	    }
+	]
+}
