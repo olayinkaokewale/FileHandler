@@ -14,7 +14,7 @@ Download:
 > [github download](https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
 
 Composer:
-> **... coming soon ...**
+> composer require joshmvc/filehandler
 
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
