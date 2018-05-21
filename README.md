@@ -1,16 +1,19 @@
 # PHP: FileHandler Library
-FileHandler is a php library that helps to simplify the process of file processing (upload) with PHP.
+FileHandler is a php library that helps simplify the process of file processing (upload).
 
 It works well with single and multiple file(s) upload.
 
 ## Installation
 Download zip and extract to your directory or clone from github directly to your library directory.
 
-Clone using SSH: git clone git@github.com:olayinkaokewale/FileHandler.git
+Clone using SSH: git clone:
+> git@github.com:olayinkaokewale/FileHandler.git
 
-Clone using HTTPS: git clone https://github.com/olayinkaokewale/FileHandler.git
+Clone using HTTPS: git clone:
+> https://github.com/olayinkaokewale/FileHandler.git
 
-Download: [github download]: https://github.com/olayinkaokewale/FileHandler/archive/master.zip
+Download:
+> [github download]: https://github.com/olayinkaokewale/FileHandler/archive/master.zip
 
 Composer: ... coming soon ...
 
@@ -39,6 +42,7 @@ Upload method takes in three arguments.
 	- extension: this is the string of the final file extension to be saved as.
 	- file_name: this is the static name of the file to be saved. [NOTE: ONLY USEFUL WHEN FILE UPLOADED IS ONE]
 	- //others would be added here....
+
 	EXAMPLE:
 	$constraints = [
 		"size_limit" => 0, //value in bytes. 100kb = 100*1024
@@ -48,29 +52,32 @@ Upload method takes in three arguments.
 	];
 
 ## Use Case
+You want users to be able to upload multiple files to your server. Below are the upload rules
+- file size must not be greater than 2MB (i.e. 2097152 bytes)
+- file must be of image format jpg, jpeg, gif or png
+
 
 > files_upload.html
 ```html
 <form method="POST" action="upload.php" enctype="multipart/form-data">
-	<input type="file" name="files[]" multiple />
-	<button type="submit">Upload Files</button>
+<input type="file" name="files[]" multiple />
+<button type="submit">Upload Files</button>
 </form>
 ```
 
 > upload.php
 ```php
 <?php
-	use JoshMVC\Libs\FileHandler as FileHandler;
-	if (isset($_FILES["files"])) {
-		$destination = "uploads/";
-		$constraints = [
-			"size_limit" => 102400, /* value in bytes. 100kb = 100*1024 */
-			"accepted_format" => ["image/jpeg", "image/png", "image/gif"], /* must always be array. */
-			"extension" => "jpg", /* file extension */
-			"file_name" => "filename.ext" /* What to rename the file to. */
-		];
 
-		$feedback = FileHandler::__upload($files, $destination, $constraints);
-	}
-		
+use JoshMVC\Libs\FileHandler as FileHandler;
+if (isset($_FILES["files"])) {
+$destination = "uploads/";
+$constraints = [
+"size_limit" => 2097152, /* Size Limit of 2MB */
+"accepted_format" => ["image/jpeg", "image/jpg", "image/png", "image/gif"], /* only image format accepted */
+];
+
+$feedback = FileHandler::__upload($files, $destination, $constraints);
+}
+
 ```
