@@ -86,6 +86,6 @@ if (isset($_FILES["files"])) {
 ```
 
 ## Contributing
-If you're interested in contributing to this project, you can check out the issues to check what is been requested by the users of this project. 
+If you're interested in contributing to this project, you can check out the issues to know what is being requested by the users of this project. 
 
-However, if you're bringing on a new idea, you can mail me at okjool2012@gmail.com to discuss this with me. Thanks
+However, if you're bringing on a new idea, you can mail me at okjool2012@gmail.com to discuss it with me. Thanks
