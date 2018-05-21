@@ -21,7 +21,7 @@ Clone using HTTPS:
 > https://github.com/olayinkaokewale/FileHandler.git
 
 
-
+## Usage Requirement(s)
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
 require_once '<_your_path>/FileHandler/FileHandler.class.php';
