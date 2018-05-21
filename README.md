@@ -2,7 +2,17 @@
 FileHandler is a php library that helps simplify the process of file processing (upload). It works well with single and multiple file(s) upload.
 
 ## Installation
-Download zip and extract to your directory or clone from github directly to your library directory.
+Recommended Method: Use [Composer](http://getcomposer.org/download/) to get the library by running the script below
+```bash
+composer require joshmvc/filehandler
+```
+
+Other Installation Methods:
+
+Download zip and extract to your directory
+> [github download](https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
+
+OR clone from github directly to your library directory.
 
 Clone using SSH:
 > git@github.com:olayinkaokewale/FileHandler.git
@@ -10,13 +20,6 @@ Clone using SSH:
 Clone using HTTPS:
 > https://github.com/olayinkaokewale/FileHandler.git
 
-Download:
-> [github download](https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
-
-Composer:
-```sh
-composer require joshmvc/filehandler
-```
 
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
@@ -35,7 +38,7 @@ use JoshMVC\Libs\FileHandler as FileHandler;
 
 ## Methods
 #### __upload()
-Upload method takes in three arguments.
+__upload method takes in three arguments.
 
 1) $files _(required)_ - this contains the file element comming straight from $_FILES["input_name"] in html tag `<input type="file" name="input_name[]" multiple>`
 
