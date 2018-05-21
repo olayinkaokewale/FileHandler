@@ -14,11 +14,18 @@ Download:
 > [github download](https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
 
 Composer:
-> composer require joshmvc/filehandler
+```sh
+composer require joshmvc/filehandler
+```
 
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
 require_once '<_your_path>/FileHandler/FileHandler.class.php';
+```
+
+If installed using composer, add this line of code to the file you want to use FileHandler in:
+```php
+require 'autoloader.php';
 ```
 
 Inside the php file you want to use this library, import the namespace using the following code:
