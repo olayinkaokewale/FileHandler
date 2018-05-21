@@ -11,7 +11,7 @@ Clone using HTTPS:
 > https://github.com/olayinkaokewale/FileHandler.git
 
 Download:
-> [github download] (https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
+> [github download](https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
 
 Composer:
 > **... coming soon ...**
@@ -44,17 +44,14 @@ Upload method takes in three arguments.
 
 	EXAMPLE:
 	
+	```php
 	$constraints = [
-
 		"size_limit" => 0, //value in bytes. 100kb = 100*1024
-
 		"accepted_format" => ["image/jpeg", "image/png", "image/gif"], //must always be array.
-
 		"extension" => "jpg",
-
 		"file_name" => "filename.ext"
-
 	];
+	```
 
 ## Use Case
 You want users to be able to upload multiple files to your server. Below are the upload rules
@@ -89,4 +86,6 @@ if (isset($_FILES["files"])) {
 ```
 
 ## Contributing
-If you're interested in contributing to this project, you can check out the issues to check what is been requested by the users of this project. If you're bringing on a new idea, you can mail me at okjool2012@gmail.com to discuss this with me. Thanks
+If you're interested in contributing to this project, you can check out the issues to check what is been requested by the users of this project. 
+
+However, if you're bringing on a new idea, you can mail me at okjool2012@gmail.com to discuss this with me. Thanks
