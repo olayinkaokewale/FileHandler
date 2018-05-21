@@ -1,21 +1,20 @@
-# PHP: FileHandler Library
-FileHandler is a php library that helps simplify the process of file processing (upload).
-
-It works well with single and multiple file(s) upload.
+# PHP Library: FileHandler
+FileHandler is a php library that helps simplify the process of file processing (upload). It works well with single and multiple file(s) upload.
 
 ## Installation
 Download zip and extract to your directory or clone from github directly to your library directory.
 
-Clone using SSH: git clone:
+Clone using SSH:
 > git@github.com:olayinkaokewale/FileHandler.git
 
-Clone using HTTPS: git clone:
+Clone using HTTPS:
 > https://github.com/olayinkaokewale/FileHandler.git
 
 Download:
-> [github download]: https://github.com/olayinkaokewale/FileHandler/archive/master.zip
+> [github download] (https://github.com/olayinkaokewale/FileHandler/archive/master.zip)
 
-Composer: ... coming soon ...
+Composer:
+> **... coming soon ...**
 
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
@@ -31,7 +30,7 @@ use JoshMVC\Libs\FileHandler as FileHandler;
 #### __upload()
 Upload method takes in three arguments.
 
-1) $files _(required)_ - this contains the file element comming straight from $_FILES["input_name"] in html tag `<form enctype="multipart/form-data">`
+1) $files _(required)_ - this contains the file element comming straight from $_FILES["input_name"] in html tag `<input type="file" name="input_name[]" multiple>`
 
 2) $destination _(required)_ - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: "../images/dp/" or "../images/dp"
 
@@ -44,11 +43,17 @@ Upload method takes in three arguments.
 	- //others would be added here....
 
 	EXAMPLE:
+	
 	$constraints = [
+
 		"size_limit" => 0, //value in bytes. 100kb = 100*1024
+
 		"accepted_format" => ["image/jpeg", "image/png", "image/gif"], //must always be array.
+
 		"extension" => "jpg",
+
 		"file_name" => "filename.ext"
+
 	];
 
 ## Use Case
@@ -70,14 +75,18 @@ You want users to be able to upload multiple files to your server. Below are the
 <?php
 
 use JoshMVC\Libs\FileHandler as FileHandler;
-if (isset($_FILES["files"])) {
-$destination = "uploads/";
-$constraints = [
-"size_limit" => 2097152, /* Size Limit of 2MB */
-"accepted_format" => ["image/jpeg", "image/jpg", "image/png", "image/gif"], /* only image format accepted */
-];
 
-$feedback = FileHandler::__upload($files, $destination, $constraints);
+if (isset($_FILES["files"])) {
+	$destination = "uploads/";
+	$constraints = [
+		"size_limit" => 2097152, /* Size Limit of 2MB */
+		"accepted_format" => ["image/jpeg", "image/jpg", "image/png", "image/gif"], /* only image format accepted */
+	];
+
+	$feedback = FileHandler::__upload($_FILES["files"], $destination, $constraints);
 }
 
 ```
+
+## Contributing
+If you're interested in contributing to this project, you can check out the issues to check what is been requested by the users of this project. If you're bringing on a new idea, you can mail me at okjool2012@gmail.com to discuss this with me. Thanks
