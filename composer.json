@@ -10,8 +10,8 @@
         }
     ],
     "autoload": {
-        "psr-0" : {
-            "JoshMVC\\Libs\\FileHandler" : "src"
+        "psr-4" : {
+            "JoshMVC\\Libs\\FileHandler" : "src/"
         }
     },
     "repositories": [

@@ -1,5 +1,5 @@
 <?php
-	require_once ('FileHandler.class.php');
+	require_once ('../src/FileHandler.php');
 	use JoshMVC\Libs\FileHandler as fHandler;
 
 
