@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4" : {
-            "JoshMVC\\Libs\\FileHandler" : "src/"
+            "JoshMVC\\Libs\\FileHandler\\" : "src/"
         }
     },
     "repositories": [
