@@ -1,14 +1,24 @@
 {
     "name": "joshmvc/filehandler",
+    "description": "PHP Library to help manage file processing especially upload faster and easily",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olayinka Okewale",
+            "email": "okjool2012@gmail.com"
+        }
+    ],
     "autoload": {
         "psr-0" : {
             "JoshMVC\\Libs\\FileHandler" : "src"
         }
     },
     "repositories": [
-	    {
-	        "type": "vcs",
-	        "url": "https://github.com/olayinkaokewale/FileHandler.git"
-	    }
-	]
+        {
+            "type": "vcs",
+            "url": "https://github.com/olayinkaokewale/FileHandler"
+        }
+    ],
+    "require": {}
 }
