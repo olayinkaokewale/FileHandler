@@ -24,7 +24,7 @@ Clone using HTTPS:
 ## Usage Requirement(s)
 If manually installed, add this line of code to your autoloader or to the file you want to use FileHandler in:
 ```php
-require_once '<_your_path>/FileHandler/FileHandler.class.php';
+require_once '<_your_path>/FileHandler/src/FileHandler.php';
 ```
 
 If installed using composer, add this line of code to the file you want to use FileHandler in:
@@ -45,12 +45,12 @@ __upload method takes in three arguments.
 
 2) $destination _(required)_ - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: "../images/dp/" or "../images/dp"
 
-3) $constraints _(optional)_ - this is the constraints required for file to be uploaded. This is an associative array in which any key - value pair can be ignored.
+3) $constraints _(optional)_ - this is the constraints required for file to be uploaded based on your requirements. This is an associative array in which any key - value pair can be ignored.
 	constraint keys: 
-	- size_limit: this is the limit of the file in bytes. [size limit for 100kb is 100*1024 = 102400]
-	- accepted_format: this is an array of accepted file types [some accepted format for images are ["image/jpeg", "image/png", "image/gif"]];
-	- extension: this is the string of the final file extension to be saved as.
-	- file_name: this is the static name of the file to be saved. [NOTE: ONLY USEFUL WHEN FILE UPLOADED IS ONE]
+	- **size_limit**: this is the limit of the file in bytes. [size limit for 100kb is 100*1024 = 102400]
+	- **accepted_format**: this is an array of accepted file types [some accepted format for images are ["image/jpeg", "image/png", "image/gif"]];
+	- **extension**: this is the string of the final file extension to be saved as.
+	- **file_name**: this is the static name of the file to be saved. [NOTE: ONLY USEFUL WHEN FILE UPLOADED IS ONE]
 	- //others would be added here....
 
 	EXAMPLE:
@@ -81,6 +81,8 @@ You want users to be able to upload multiple files to your server. Below are the
 > upload.php
 ```php
 <?php
+
+//Require "vendor/autoload" OR "<your_library_path>/FileHandler/src/FileHandler.php" before using namespace.
 
 use JoshMVC\Libs\FileHandler as FileHandler;
 
