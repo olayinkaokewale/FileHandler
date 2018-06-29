@@ -16,6 +16,164 @@ class FileHandler {
 
 	// -------------------------------------------------- START: MAIN FUNCTIONS ------------------------------------------------ //
 
+	static function upload_image($files, $destination, $file_name="", $max_size=0) {
+		/* ------------------------------------------------------
+		/  1) $files - this contains the file element comming straight from $_FILES["input_name"] in html tag <form enctype="multipart/form-data">
+		/  2) $destination - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: ../images/dp/ or ../images/dp
+		/  3) $file_name - this is the name of the files(s) to be saved.
+		/  4) $max_size - this is the maximum size of the image file to be uploaded.
+		/-------------------------------------------------------*/
+		$constraints = [
+			"accepted_format" => [
+				
+				"image/jpg", 
+				"image/png", 
+				"image/jpeg", 
+				"image/gif", 
+				"image/bmp", 
+				"image/cis-cod", 
+				"image/ief", 
+				"image/pipeg", 
+				"image/svg+xml", 
+				"image/tiff", 
+				"image/x-cmu-raster", 
+				"image/x-cmx", 
+				"image/x-icon", 
+				"image/x-portable-anymap", 
+				"image/x-portable-bitmap", 
+				"image/x-portable-graymap", 
+				"image/x-portable-pixmap", 
+				"image/x-rgb", 
+				"image/x-xbitmap", 
+				"image/x-xpixmap", 
+				"image/x-xwindowdump"
+
+			]
+		];
+		if ($file_name != "") $constraints["file_name"] = $file_name;
+		if ($max_size != 0) $constraints["size_limit"] = $max_size;
+
+		return Self::__upload($files, $destination, $constraints);
+	}
+
+	static function upload_video($files, $destination, $file_name="", $max_size=0) {
+		/* ------------------------------------------------------
+		/  1) $files - this contains the file element comming straight from $_FILES["input_name"] in html tag <form enctype="multipart/form-data">
+		/  2) $destination - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: ../images/dp/ or ../images/dp
+		/  3) $file_name - this is the name of the files(s) to be saved.
+		/  4) $max_size - this is the maximum size of the image file to be uploaded.
+		/-------------------------------------------------------*/
+		$constraints = [
+			"accepted_format" => [
+				
+				"video/mpeg", 
+				"video/mp4", 
+				"video/quicktime", 
+				"video/x-la-asf", 
+				"video/x-ms-asf", 
+				"video/x-msvideo", 
+				"video/x-sgi-movie"
+
+			]
+		];
+		if ($file_name != "") $constraints["file_name"] = $file_name;
+		if ($max_size != 0) $constraints["size_limit"] = $max_size;
+
+		return Self::__upload($files, $destination, $constraints);
+	}
+
+	static function upload_audio($files, $destination, $file_name="", $max_size=0) {
+		/* ------------------------------------------------------
+		/  1) $files - this contains the file element comming straight from $_FILES["input_name"] in html tag <form enctype="multipart/form-data">
+		/  2) $destination - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: ../images/dp/ or ../images/dp
+		/  3) $file_name - this is the name of the files(s) to be saved.
+		/  4) $max_size - this is the maximum size of the image file to be uploaded.
+		/-------------------------------------------------------*/
+		$constraints = [
+			"accepted_format" => [
+				
+				"audio/basic", 
+				"audio/mid", 
+				"audio/mpeg", 
+				"audio/mpg", 
+				"audio/mp3", 
+				"audio/x-mp3", 
+				"audio/x-mpeg-3", 
+				"audio/x-mpeg3", 
+				"audio/mpeg3", 
+				"audio/x-mpegaudio", 
+				"audio/x-mpeg", 
+				"audio/x-aiff", 
+				"audio/x-mpegurl", 
+				"audio/x-pn-realaudio", 
+				"audio/x-wav"
+
+			]
+		];
+		if ($file_name != "") $constraints["file_name"] = $file_name;
+		if ($max_size != 0) $constraints["size_limit"] = $max_size;
+
+		return Self::__upload($files, $destination, $constraints);
+	}
+
+	static function upload_document($files, $destination, $file_name="", $max_size=0) {
+		/* ------------------------------------------------------
+		/  1) $files - this contains the file element comming straight from $_FILES["input_name"] in html tag <form enctype="multipart/form-data">
+		/  2) $destination - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: ../images/dp/ or ../images/dp
+		/  3) $file_name - this is the name of the files(s) to be saved.
+		/  4) $max_size - this is the maximum size of the image file to be uploaded.
+		/-------------------------------------------------------*/
+		$constraints = [
+			"accepted_format" => [
+				
+				"text/plain", 
+				"application/msword", 
+				"application/pdf", 
+				"application/rtf", 
+				"application/vnd.ms-excel", 
+				"application/vnd.ms-powerpoint", 
+				"application/x-latex", 
+				"application/x-tex", 
+				"application/x-texinfo", 
+				"application/x-texinfo"
+
+			]
+		];
+		if ($file_name != "") $constraints["file_name"] = $file_name;
+		if ($max_size != 0) $constraints["size_limit"] = $max_size;
+
+		return Self::__upload($files, $destination, $constraints);
+	}
+
+	static function upload_compressed($files, $destination, $file_name="", $max_size=0) {
+		/* ------------------------------------------------------
+		/  1) $files - this contains the file element comming straight from $_FILES["input_name"] in html tag <form enctype="multipart/form-data">
+		/  2) $destination - this is the path to the folder where the file is saved. [NOTE: this should not be url link.] example: ../images/dp/ or ../images/dp
+		/  3) $file_name - this is the name of the files(s) to be saved.
+		/  4) $max_size - this is the maximum size of the image file to be uploaded.
+		/-------------------------------------------------------*/
+		$constraints = [
+			"accepted_format" => [
+				
+				"application/x-compressed", 
+				"application/x-compress", 
+				"application/x-gtar", 
+				"application/x-gzip", 
+				"application/x-tar", 
+				"application/zip", 
+				"application/octet-stream", 
+				"application/x-zip-compressed", 
+				"multipart/x-zip", 
+				"application/x-rar-compressed"
+				
+			]
+		];
+		if ($file_name != "") $constraints["file_name"] = $file_name;
+		if ($max_size != 0) $constraints["size_limit"] = $max_size;
+
+		return Self::__upload($files, $destination, $constraints);
+	}
+
 	// -------------------------------------------------- STOP:  MAIN FUNCTIONS ------------------------------------------------ //
 
 	// -------------------------------------------------- START: STATIC FUNCTIONS ------------------------------------------------ //
@@ -71,7 +229,7 @@ class FileHandler {
 						$feedback[] = ["old_name" => $file["name"], "flag" => 0, "message" => "File rejected: Invalid file format"];
 					}
 				} else {
-					$feedback[] = ["old_name" => $file["name"], "flag" => 0, "message" => "Image upload failed"];
+					$feedback[] = ["old_name" => $file["name"], "flag" => 0, "message" => "File upload failed"];
 				}
 			}
 		}

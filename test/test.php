@@ -4,7 +4,7 @@
 
 
 	if (isset($_POST["is_submit"])) {
-		echo "<pre>", print_r(fHandler::__upload($_FILES["fileName"], "uploads/"), true), "</pre>";
+		echo "<pre>", print_r(fHandler::upload_audio($_FILES["fileName"], "uploads/"), true), "</pre>";
 	}
 
 ?>

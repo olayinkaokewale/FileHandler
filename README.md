@@ -15,10 +15,10 @@ Download zip and extract to your directory
 OR clone from github directly to your library directory.
 
 Clone using SSH:
-> git@github.com:olayinkaokewale/FileHandler.git
+> git@github.com:<your_username>/FileHandler.git
 
 Clone using HTTPS:
-> https://github.com/olayinkaokewale/FileHandler.git
+> https://github.com/<your_username>/FileHandler.git
 
 
 ## Usage Requirement(s)
@@ -37,8 +37,115 @@ Inside the php file you want to use this library, import the namespace using the
 use JoshMVC\Libs\FileHandler as FileHandler;
 ```
 
-## Methods
-#### __upload()
+## New Method(s)
+
+#### upload_image($files, $destination, $file_name="", $max_size=0)
+This method can be used to upload many format of image(s).
+
+Accepted image format include jpeg, jpg, jpe, png, gif, bmp, svg, cod, ief, jfif, tif, tiff, ras, cmx, ico, pnm, pbm, ppm, rgb, xbm, xwd
+
+Both `$file_name` and `$max_size` are optional. However, if you wish to specify final name of file, insert your parameter in the third args space and if you wish to specify file size please do so by inserting the size limit as bytes in the fourth args space (e.g. 2MB is 2*1024*1024 bytes so you will input 2097152). 
+
+Example Usage:
+
+```php
+FileHandler::upload_image($_FILES["img_upload"], "myfiles/images/"); // Saves file as random name and uses the file's extension.
+// OR
+FileHandler::upload_image($_FILES["img_upload"], "myfiles/images/", "user1.jpg"); // Specify file name
+// OR
+FileHandler::upload_image($_FILES["img_upload"], "myfiles/images/", "user1.jpg", 2097152); // Specify file size limit
+// OR - to add size limit without specifying name, use empty string for the third parameter:
+FileHandler::upload_image($_FILES["img_upload"], "myfiles/images/", "", 2097152); // Specify file size limit
+```
+
+
+
+#### upload_video($files, $destination, $file_name="", $max_size=0)
+This method can be used to upload many format of video(s).
+
+Accepted video format include mp2, mp4, avi, mov, mpa, mpe, mpeg, mpg, mpv2, qt, lsf, lsx, asf, asr, asx, movie
+
+Both `$file_name` and `$max_size` are optional. However, if you wish to specify final name of file, insert your parameter in the third args space and if you wish to specify file size please do so by inserting the size limit as bytes in the fourth args space (e.g. 2MB is 2*1024*1024 bytes so you will input 2097152). 
+
+Example Usage:
+
+```php
+FileHandler::upload_video($_FILES["vid_upload"], "myfiles/videos/"); // Saves file as random name and uses the file's extension.
+// OR
+FileHandler::upload_video($_FILES["vid_upload"], "myfiles/videos/", "video1.mp4"); // Specify file name
+// OR
+FileHandler::upload_video($_FILES["vid_upload"], "myfiles/videos/", "video1.mp4", 2097152); // Specify file size limit
+// OR - to add size limit without specifying name, use empty string for the third parameter:
+FileHandler::upload_video($_FILES["vid_upload"], "myfiles/videos/", "", 2097152); // Specify file size limit
+```
+
+
+
+#### upload_audio($files, $destination, $file_name="", $max_size=0)
+This method can be used to upload many format of audio(s).
+
+Accepted audio format include au, snd, mid, rmi, mp3, aif, aifc, aiff, m3u, ra, ram, wav
+
+Both `$file_name` and `$max_size` are optional. However, if you wish to specify final name of file, insert your parameter in the third args space and if you wish to specify file size please do so by inserting the size limit as bytes in the fourth args space (e.g. 2MB is 2*1024*1024 bytes so you will input 2097152). 
+
+Example Usage:
+
+```php
+FileHandler::upload_audio($_FILES["aud_upload"], "myfiles/audio/"); // Saves file as random name and uses the file's extension.
+// OR
+FileHandler::upload_audio($_FILES["aud_upload"], "myfiles/audio/", "audio1.mp3"); // Specify file name
+// OR
+FileHandler::upload_audio($_FILES["aud_upload"], "myfiles/audio/", "audio1.mp3", 2097152); // Specify file size limit
+// OR - to add size limit without specifying name, use empty string for the third parameter:
+FileHandler::upload_audio($_FILES["aud_upload"], "myfiles/audio/", "", 2097152); // Specify file size limit
+```
+
+
+
+#### upload_document($files, $destination, $file_name="", $max_size=0)
+This method can be used to upload many document format.
+
+Accepted document format include txt, doc, docx, xls, xlsx, ppt, pptx, rtf, pdf and Latex files
+
+Both `$file_name` and `$max_size` are optional. However, if you wish to specify final name of file, insert your parameter in the third args space and if you wish to specify file size please do so by inserting the size limit as bytes in the fourth args space (e.g. 2MB is 2*1024*1024 bytes so you will input 2097152). 
+
+Example Usage:
+
+```php
+FileHandler::upload_document($_FILES["doc_upload"], "myfiles/docs/"); // Saves file as random name and uses the file's extension.
+// OR
+FileHandler::upload_document($_FILES["doc_upload"], "myfiles/docs/", "DOC_123232.pdf"); // Specify file name
+// OR
+FileHandler::upload_document($_FILES["doc_upload"], "myfiles/docs/", "DOC_123232.pdf", 2097152); // Specify file size limit
+// OR - to add size limit without specifying name, use empty string for the third parameter:
+FileHandler::upload_document($_FILES["doc_upload"], "myfiles/docs/", "", 2097152); // Specify file size limit
+```
+
+
+
+#### upload_compressed($files, $destination, $file_name="", $max_size=0)
+This method can be used to upload many compressed files types.
+
+Accepted compressed file format include zip, rar, gz, z, gtar, tgz
+
+Both `$file_name` and `$max_size` are optional. However, if you wish to specify final name of file, insert your parameter in the third args space and if you wish to specify file size please do so by inserting the size limit as bytes in the fourth args space (e.g. 2MB is 2*1024*1024 bytes so you will input 2097152). 
+
+Example Usage:
+
+```php
+FileHandler::upload_compressed($_FILES["archive_upload"], "myfiles/compressed/"); // Saves file as random name and uses the file's extension.
+// OR
+FileHandler::upload_compressed($_FILES["archive_upload"], "myfiles/compressed/", "my_archive.rar"); // Specify file name
+// OR
+FileHandler::upload_compressed($_FILES["archive_upload"], "myfiles/compressed/", "my_archive.rar", 2097152); // Specify file size limit
+// OR - to add size limit without specifying name, use empty string for the third parameter:
+FileHandler::upload_compressed($_FILES["archive_upload"], "myfiles/compressed/", "", 2097152); // Specify file size limit
+```
+
+
+
+## Legacy Method(s)
+#### __upload($files, $destination, $constraints=[])
 __upload method takes in three arguments.
 
 1) $files _(required)_ - this contains the file element comming straight from $_FILES["input_name"] in html tag `<input type="file" name="input_name[]" multiple>`
@@ -96,6 +203,28 @@ if (isset($_FILES["files"])) {
 	$feedback = FileHandler::__upload($_FILES["files"], $destination, $constraints);
 }
 
+```
+
+
+
+## FAQ
+
+#### Why am I getting response **"File upload failed?"**
+If this message persist, you might have exceeded the upload size limit of your php.ini file. You need to increase it or insert the code below to your HTACCESS file.
+
+```htaccess
+php_value upload_max_filesize 100M
+php_value post_max_size 102M
+```
+
+Or go to the following line in php.ini file and edit to suit your need.
+
+```ini
+; Maximum allowed size for uploaded files.
+upload_max_filesize = 100M
+
+; Must be greater than or equal to upload_max_filesize
+post_max_size = 102M
 ```
 
 ## Contributing
